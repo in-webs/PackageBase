@@ -8,7 +8,7 @@ abstract class AbstractSoapClientBase implements SoapClientInterface
      * Soapclient called to communicate with the actual SOAP Service
      * @var \SoapClient
      */
-    private static $soapClient;
+    protected static $soapClient;
     /**
      * Contains Soap call result
      * @var mixed
@@ -43,7 +43,7 @@ abstract class AbstractSoapClientBase implements SoapClientInterface
      */
     public static function getSoapClient()
     {
-        return self::$soapClient;
+        return static::$soapClient;
     }
     /**
      * Static method setting current SoapClient
@@ -52,7 +52,7 @@ abstract class AbstractSoapClientBase implements SoapClientInterface
      */
     public static function setSoapClient(\SoapClient $soapClient)
     {
-        return (self::$soapClient = $soapClient);
+        return (static::$soapClient = $soapClient);
     }
     /**
      * Method initiating SoapClient
