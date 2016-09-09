@@ -447,4 +447,12 @@ abstract class AbstractSoapClientBase implements SoapClientInterface
         $this->result = $result;
         return $this;
     }
+
+    /**
+     * Resets the last errors
+     */
+    public function resetLastErrors()
+    {
+        $this->lastError = [];
+    }
 }
